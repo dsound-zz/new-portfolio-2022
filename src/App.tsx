@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { GlobalStyles } from "./global"
 import TextAnimations from "./Components/TextAnimations"
 import { colors } from "./colors"
+import SkillList from "./Components/SkillList"
 
 const Container = styled.div`
   display: flex;
@@ -48,6 +49,9 @@ function App() {
             size='30px'
             animationName='fadeDown'
           />
+          <div>
+            <SkillList />
+          </div>
         </Main>
       </Container>
     </>
