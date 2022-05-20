@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { GlobalStyles } from "./global"
-import TextAnimations from "./Components/TextAnimations"
+import TextAnimations from "./Components/Name"
 import { colors } from "./colors"
-import SkillList from "./Components/SkillList"
+import Name from "./Components/Name"
 
 const Container = styled.div`
   display: flex;
@@ -43,15 +43,7 @@ function App() {
         <NavBar>NavBar</NavBar>
         <Break />
         <Main>
-          <TextAnimations
-            style={{ marginLeft: "15%" }}
-            text='Demian Sims'
-            size='30px'
-            animationName='fadeDown'
-          />
-          <div>
-            <SkillList />
-          </div>
+          <Name />
         </Main>
       </Container>
     </>
