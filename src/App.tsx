@@ -24,7 +24,7 @@ const NavBar = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 50px;
   width: calc(100% - 20px);
 
@@ -66,23 +66,41 @@ const NavItem = styled.a`
 `;
 
 const Avatar = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 `;
 
 const Content = styled.div`
-  border: white solid 1px;
-  flex: 1;
-  width: calc(100% - 20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75%;
+  margin-left: 100px;
+  height: 70vh;
 `;
 
 const Text = styled.div`
-  padding: 5em;
+  &.smallText {
+    font-size: -0.5em;
 
-  h1 {
-    color: ${colors.lightCream};
-    letter-spacing: 0.2rem;
+    span {
+      font-size: 3.2em;
+      color: ${colors.nameColor};
+      margin-bottom: 20px;
+    }
   }
+
+  &.descriptor {
+    font-size: 5em;
+  }
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em;
 `;
 
 const Skills = styled.div`
@@ -99,27 +117,24 @@ function App() {
       <GlobalStyles />
       <Container>
         <NavBar>
+          <NavItem>Github</NavItem>
+          <NavItem>Linkedin</NavItem>
+          <NavItem>Projects</NavItem>
+          <NavItem>Resume</NavItem>
+        </NavBar>
+        <Content>
           <LeftSideNav>
-            <NavItem>Github</NavItem>
-            <NavItem>Linkedin</NavItem>
-            <NavItem>Projects</NavItem>
-            <NavItem>Resume</NavItem>
+            <TextWrapper>
+              <Text className="smallText">
+                i am
+                <span className="name"> Demian Sims</span>
+              </Text>
+              <Text className="descriptor"> a FRONTend developer</Text>
+            </TextWrapper>
           </LeftSideNav>
           <RightSideNav>
             <Avatar src={avatar} />
           </RightSideNav>
-        </NavBar>
-        <Content>
-          <Text>
-            <h1>Demian Sims</h1>
-          </Text>
-          <Skills>
-            <h3>ReactJS</h3>
-            <h3>React Native</h3>
-            <h3>Typescript</h3>
-            <h3>Rails</h3>
-            <h3>Accessibility</h3>
-          </Skills>
         </Content>
       </Container>
     </>
